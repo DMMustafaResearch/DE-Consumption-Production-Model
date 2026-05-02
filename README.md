@@ -2,7 +2,7 @@
 
 Pre-registered prediction for the dark energy equation of state $w(z)$, tied to the cosmic star-formation history. This repository contains the LaTeX source of the pre-registration, the bibliography, and the Python scripts that operationalise the registered prediction.
 
-**Pre-registration on Zenodo:** *[DOI placeholder — update once minted]*
+**Pre-registration on Zenodo:** [10.5281/zenodo.19635852](https://doi.org/10.5281/zenodo.19635852)
 
 ## Summary
 
@@ -82,7 +82,7 @@ pip install numpy scipy
 
 If you use this code or test the prediction, please cite the Zenodo deposit:
 
-> Mustafa, D. (2026). *Pre-registered Prediction for the Dark Energy Equation of State from a Consumption-Production Model.* Zenodo. *[DOI placeholder — update once minted]*
+> Mustafa, D. (2026). *Pre-registered Prediction for the Dark Energy Equation of State from a Consumption-Production Model.* Zenodo. [10.5281/zenodo.19635852](https://doi.org/10.5281/zenodo.19635852)
 
 ## License
 
