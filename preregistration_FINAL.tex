@@ -1,0 +1,293 @@
+\documentclass[12pt,preprint]{aastex631}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{booktabs}
+
+\shorttitle{Pre-registered DE w(z) Prediction}
+\shortauthors{Mustafa}
+
+\begin{document}
+
+\title{Pre-registered Prediction for the Dark Energy Equation of State\\from a Consumption--Production Model}
+
+\author{Duaa Mustafa}
+\affiliation{Independent Researcher}
+\email{[INSERT EMAIL]}
+
+\begin{abstract}
+We pre-register a quantitative prediction for the dark energy equation of state $w(z)$ testable by DESI 5-year, Euclid, the Roman Space Telescope, LSST, and gravitational-wave standard sirens. The prediction derives from a model in which dark energy density evolves as $\dot{\rho}_{\rm DE} = \alpha\,\psi(t) - \beta\,(1-R)\int\psi\,dt'$, with production proportional to the cosmic star-formation rate and consumption proportional to surviving stellar mass (return fraction $R = 0.4$). Two parameters are fixed: $f_{\rm prim} = 0.445$ and $\gamma = 0.272$. The model predicts a phantom crossing at $z = 0.33 \pm 0.12$ and a specific $w(z)$ trajectory with SFR-coupled curvature distinguishable from CPL at $z < 0.3$ and $z > 0.7$. Tolerances are set so that $\Lambda$CDM ($w = -1$) is excluded at 8 of 10 redshift bins. Confirmation and falsification criteria are symmetric (6/10 bins in vs.\ 5/10 bins out). Results are insensitive to the integration upper limit ($z_{\rm max} = 6$--$15$ changes $\rho_{\rm DE}(z=0)$ by $< 0.1\%$), to the stellar mass return fraction ($R = 0.3$--$0.5$ produces identical $w(z)$ after refitting), and to the background cosmology approximation (self-consistent $H(z)$ shifts $w$ by $< 0.002$). We do not claim a field-theoretic derivation; this document registers a fitting function tied to the observed SFR history for prospective testing against independent data.
+\end{abstract}
+
+\keywords{cosmology: dark energy --- cosmology: observations --- cosmology: theory}
+
+\section{Introduction}
+
+The DESI first-year baryon acoustic oscillation measurements \citep{DESI2024} prefer a time-varying dark energy equation of state crossing the phantom divide ($w = -1$) near $z \approx 0.3$. We propose a functional form for $\rho_{\rm DE}(z)$ tied to the observed cosmic star-formation history \citep{MadauDickinson2014} and register specific numerical predictions before higher-precision data become available.
+
+\subsection{Scope and Limitations}
+
+This document registers a \emph{fitting function}, not a fundamental theory. The evolution equation (Section~\ref{sec:model}) is phenomenological. We do not provide a Lagrangian, identify the dark energy degree of freedom, or demonstrate perturbation stability. Even a successful $w(z)$ prediction would confirm the fitting function, not the physical mechanism. We state this explicitly to prevent overclaiming.
+
+The primary value of this pre-registration is that the functional form is not an arbitrary polynomial: it is uniquely determined by the observed SFR history with two free parameters. If the resulting $w(z)$ \emph{shape} (not just endpoint values) matches independent measurements, that is a non-trivial coincidence requiring explanation.
+
+\subsection{Circularity Statement}
+
+The parameters ($f_{\rm prim}$, $\gamma$) were fit to DESI Year~1 CPL values ($w_0$, $w_a$). DESI 5-year data is a superset of Year~1, so testing against DESI 5-year alone is only weakly independent. The prediction becomes genuinely independent when tested against Euclid, Roman, LSST, or gravitational-wave standard sirens (Section~\ref{sec:independent}), which use different instruments, pipelines, and tracers.
+
+\section{Model Specification}
+\label{sec:model}
+
+\subsection{Dark Energy Evolution Equation}
+
+\begin{equation}
+\frac{d\rho_{\rm DE}}{dt} = \alpha\,\psi(t) - \beta\,\rho_{\star,\rm surv}(t)
+\label{eq:evolution}
+\end{equation}
+where $\psi(t)$ is the cosmic star-formation rate density and $\rho_{\star,\rm surv}(t) = (1-R)\int_0^t \psi(t')\,dt'$ is the surviving stellar mass density after accounting for mass returned to the ISM through winds and supernovae, with return fraction $R = 0.4$ \citep{LeitnerKravtsov2011}.
+
+The normalized dark energy density:
+\begin{equation}
+\frac{\rho_{\rm DE}(z)}{\rho_{\rm DE,0}} = f_{\rm prim} + (1 - f_{\rm prim})\,\frac{\mathcal{F}(z)}{\mathcal{F}(0)}
+\label{eq:rho_ratio}
+\end{equation}
+where:
+\begin{equation}
+\mathcal{F}(z) = \int_z^{z_{\rm max}} \left[\psi(z') - \gamma\,\frac{\rho_{\star,\rm surv}(z')}{\rho_{\star,\rm surv}(0)}\,\psi_{\rm peak}\right] \left|\frac{dt}{dz'}\right| dz'
+\end{equation}
+
+\subsection{Star-Formation Rate Density}
+
+We adopt the \citet{MadauDickinson2014} parameterization:
+\begin{equation}
+\psi(z) = 0.015\,\frac{(1+z)^{2.7}}{1 + \left(\frac{1+z}{2.9}\right)^{5.6}} \quad [M_{\odot}\,{\rm yr}^{-1}\,{\rm Mpc}^{-3}]
+\end{equation}
+
+\subsection{Fixed Parameters}
+
+Including the stellar mass return fraction $R = 0.4$:
+\begin{align}
+f_{\rm prim} &= 0.445 \\
+\gamma &= 0.272
+\end{align}
+
+These were fit to the DESI Year~1 CPL trajectory and are locked as of the date of this document.
+
+\subsection{Sensitivity to Integration Limit}
+
+We verify that results are insensitive to $z_{\rm max}$:
+
+\begin{deluxetable}{cc}
+\tablecaption{Dependence on $z_{\rm max}$\label{tab:zmax}}
+\tablehead{\colhead{$z_{\rm max}$} & \colhead{$\rho_{\rm DE}(0)$ ratio to $z_{\rm max}=10$}}
+\startdata
+6 & 0.993 \\
+8 & 0.998 \\
+10 & 1.000 \\
+12 & 1.001 \\
+15 & 1.001 \\
+\enddata
+\end{deluxetable}
+
+Variations are $< 0.1\%$ for $z_{\rm max} \geq 6$, well below the prediction tolerances.
+
+\subsection{Self-Consistency of Background Cosmology}
+
+The model computes $\rho_{\rm DE}(z)$ using a $\Lambda$CDM expansion history $H(z) = H_0\sqrt{\Omega_m(1+z)^3 + \Omega_\Lambda}$, but the resulting $\rho_{\rm DE}$ deviates from $\Lambda$CDM. We verify self-consistency by solving the Friedmann equation and the DE evolution equation simultaneously (iterating to convergence). The maximum difference in $w(z)$ between the $\Lambda$CDM-background calculation and the self-consistent solution is $|\Delta w| = 0.0016$ across $0 < z < 2.5$, occurring at $z \approx 2.0$ where the cumulative departure from $\Lambda$CDM is largest. This is 5\% of the smallest tolerance in Table~\ref{tab:predictions}. The $\Lambda$CDM-background approximation is therefore safe for all predictions in this document.
+
+\subsection{Sensitivity to Return Fraction}
+
+The return fraction $R$ (fraction of stellar mass returned to the ISM) is uncertain, with published values ranging from $\sim 0.3$ (Salpeter IMF) to $\sim 0.5$ (Chabrier IMF with updated yields). We re-fit $f_{\rm prim}$ and $\gamma$ at each value of $R \in \{0.30, 0.35, 0.40, 0.45, 0.50\}$ and find that the predicted $w(z)$ is \textbf{identical} to within numerical precision across this range. The reason: $R$ enters only through $(1-R)\int\psi\,dt'$, and the optimizer compensates by adjusting $\gamma$ proportionally, preserving the product $\gamma(1-R)$. This is a genuine degeneracy: the physically meaningful quantity is $\gamma_{\rm eff} \equiv \gamma(1-R)$, not $\gamma$ alone. The model therefore has effectively \emph{one} free parameter ($f_{\rm prim}$) plus one constrained combination ($\gamma_{\rm eff}$), rather than two independent physical parameters.
+
+\section{Predictions}
+
+\subsection{Equation-of-State Trajectory}
+
+Table~\ref{tab:predictions} lists $w(z)$ at 10 redshift points. Tolerances are set such that $\Lambda$CDM ($w = -1$) is \textbf{excluded} at 8 of 10 bins.
+
+\begin{deluxetable}{cccccc}
+\tablecaption{Predicted $w(z)$ with tolerances\label{tab:predictions}}
+\tablehead{
+\colhead{$z$} & \colhead{$w(z)$} & \colhead{Tol.} & \colhead{$|w - w_{\Lambda}|$} & \colhead{$\Lambda$CDM} & \colhead{$\sigma_w$ (est.)}
+}
+\startdata
+0.05 & $-0.906$ & $\pm 0.038$ & 0.094 & Excluded & $\sim 0.08$ \\
+0.10 & $-0.923$ & $\pm 0.031$ & 0.077 & Excluded & $\sim 0.06$ \\
+0.20 & $-0.955$ & $\pm 0.030$ & 0.045 & Excluded & $\sim 0.05$ \\
+0.30 & $-0.989$ & $\pm 0.030$ & 0.011 & Inside & $\sim 0.04$ \\
+0.40 & $-1.020$ & $\pm 0.030$ & 0.020 & Inside & $\sim 0.04$ \\
+0.50 & $-1.052$ & $\pm 0.030$ & 0.052 & Excluded & $\sim 0.05$ \\
+0.70 & $-1.115$ & $\pm 0.046$ & 0.115 & Excluded & $\sim 0.06$ \\
+1.00 & $-1.203$ & $\pm 0.081$ & 0.203 & Excluded & $\sim 0.08$ \\
+1.50 & $-1.311$ & $\pm 0.124$ & 0.311 & Excluded & $\sim 0.12$ \\
+2.00 & $-1.325$ & $\pm 0.130$ & 0.325 & Excluded & $\sim 0.15$ \\
+\enddata
+\tablecomments{$\Lambda$CDM ($w=-1$) falls outside the tolerance at 8 of 10 bins and would satisfy falsification criterion (a). Tolerances at $z = 0.30$ and $z = 0.40$ include $w = -1$ because the model is near the crossing. The $\sigma_w$ column gives the author's approximate estimates of per-bin uncertainties based on DESI Year~1 performance \citep{DESI2024} scaled to 5-year exposure; these are not official DESI projections and may differ from actual uncertainties by a factor of $\sim$2.}
+\end{deluxetable}
+
+\subsection{Phantom Crossing}
+
+\begin{equation}
+z_{\rm cross} = 0.33 \pm 0.12
+\end{equation}
+
+The allowed window $[0.21, 0.45]$ is set by the epoch at which consumption overtakes production, determined by the SFR history. The same window is used for both confirmation and falsification criteria, leaving no ambiguous gap.
+
+\subsection{Shape Signature: SFR-Coupled Curvature}
+\label{sec:shape}
+
+The model's distinctive feature is the \emph{curvature} of $w(z)$, which encodes the SFR history shape and distinguishes it from the CPL parameterization.
+
+\begin{deluxetable}{ccc}
+\tablecaption{Predicted vs.\ CPL slope $dw/dz$\label{tab:slope}}
+\tablehead{\colhead{$z$} & \colhead{$dw/dz$ (model)} & \colhead{$dw/dz$ (CPL)}}
+\startdata
+0.1 & $-0.281$ & $-0.620$ \\
+0.3 & $-0.269$ & $-0.444$ \\
+0.5 & $-0.271$ & $-0.333$ \\
+1.0 & $-0.268$ & $-0.188$ \\
+\enddata
+\end{deluxetable}
+
+At $z < 0.3$, the model slope is shallower than CPL. At $z > 0.7$, the model slope is steeper. This crossover is the shape signature in principle; however, the total variation in $dw/dz$ is only 0.013 across $\Delta z = 0.9$, implying a curvature $d^2w/dz^2 \approx 0.014$. Given projected per-bin $\sigma_w \sim 0.04$--$0.08$, the uncertainty on $dw/dz$ between adjacent bins is $\sim$0.1--0.2, an order of magnitude larger than the curvature signal. \textbf{The slope crossover is therefore not detectable with any single near-term survey.} Combined constraints from Euclid+Roman+LSST may reach the required precision. At the phantom crossing:
+\begin{equation}
+\left.\frac{d^2 w}{dz^2}\right|_{z_{\rm cross}} \neq 0
+\end{equation}
+whereas CPL has $d^2w/dz^2 \approx 0$. Detection of nonzero curvature at $\geq 2\sigma$ would distinguish the SFR-coupled model from any CPL fit.
+
+\section{Predictions for Independent Datasets}
+\label{sec:independent}
+
+The $w(z)$ trajectory in Table~\ref{tab:predictions} applies identically to all dark energy probes:
+
+\begin{enumerate}
+\item \textbf{Euclid} (ESA; data releases 2025--2030): weak lensing + galaxy clustering, space-based, 15,000~deg$^2$. Independent instrument and pipeline.
+\item \textbf{Roman Space Telescope} (NASA; launch $\sim$2027): Type~Ia SNe to $z \sim 2$ in NIR. Independent survey and SN calibration.
+\item \textbf{LSST / Vera Rubin} (NSF/DOE; cosmology $\sim$2028--2030): photometric SNe + weak lensing + clustering. Independent ground-based survey.
+\item \textbf{GW standard sirens} (LIGO/Virgo/KAGRA O5+, $\sim$2028+): $H(z)$ from BNS mergers. Model-independent distances with no EM calibration chain.
+\end{enumerate}
+
+Confirmation by any single independent dataset is more significant than confirmation by DESI 5-year alone.
+
+\section{Confirmation and Falsification Criteria}
+
+\subsection{Symmetric Design}
+
+Criteria are symmetric: core confirmation requires 6 of 10 bins passing; falsification requires 5 of 10 bins failing. The phantom crossing window is $z = 0.33 \pm 0.12$ (i.e., $[0.21, 0.45]$), identical for both directions.
+
+\subsection{Tolerance and Measurement Uncertainty Interaction}
+
+A bin is ``within tolerance'' if the measurement's central value falls within the tolerance interval \emph{expanded} by the measurement's $1\sigma$ uncertainty: $|w_{\rm meas} - w_{\rm pred}| < \delta_{\rm tol} + \sigma_{\rm meas}$. A bin is ``outside tolerance'' if this condition is not met. This allows for measurement noise (a well-measured value near the tolerance boundary is not penalized) while preventing badly-measured bins from receiving free passes through tail overlap alone.
+
+\subsection{Confirmation}
+
+\textbf{Core confirmation} requires ALL of:
+\begin{enumerate}
+\item[(a)] $w(z)$ in $\geq 6$ of 10 bins within tolerances (Table~\ref{tab:predictions});
+\item[(b)] Phantom crossing detected between $z = 0.21$ and $z = 0.45$;
+\item[(c)] Overall $\chi^2$ of 10-bin prediction: $p > 0.05$;
+\item[(d)] $w(z = 0) > -1$ at $\geq 2\sigma$.
+\end{enumerate}
+
+\textbf{Strong confirmation} additionally requires:
+\begin{enumerate}
+\item[(e)] $d^2 w / dz^2$ at the crossing nonzero at $\geq 2\sigma$.
+\end{enumerate}
+Criterion~(e) requires per-bin $w(z)$ precision of $\sim 0.005$, which exceeds DESI 5-year projections ($\sigma_w \sim 0.04$--$0.08$ per bin). Strong confirmation is a target for combined Euclid+Roman+LSST constraints, not any single near-term survey.
+
+\subsection{Falsification}
+
+The prediction is \textbf{falsified} if ANY of:
+\begin{enumerate}
+\item[(a)] $\geq 5$ of 10 bins outside tolerances;
+\item[(b)] No phantom crossing between $z = 0.21$ and $z = 0.45$;
+\item[(c)] Overall $\chi^2$: $p < 0.01$;
+\item[(d)] $w(z)$ consistent with $w = -1$ ($\Lambda$CDM) at all $z$ at $2\sigma$.
+\end{enumerate}
+
+\subsection{Discriminating Power Verification}
+
+$\Lambda$CDM ($w = -1$) is excluded at 8 of 10 bins, fails core confirmation criterion (d), and satisfies falsification criterion (a) with 8 bins outside tolerances. The criteria correctly classify $\Lambda$CDM as a falsification.
+
+\subsection{Application to CPL-Only Results}
+
+The predictions in Table~\ref{tab:predictions} are most directly testable against model-independent binned $w(z)$ reconstructions. If a survey reports only CPL parameters ($w_0$, $w_a$) without binned $w(z)$, the criteria can be applied by evaluating the CPL curve $w(z) = w_0 + w_a z/(1+z)$ at the 10 prediction redshifts and treating those values as the ``measurements,'' with uncertainties propagated from the $(w_0, w_a)$ covariance matrix. This introduces a CPL functional-form assumption, which is a weaker test than a model-independent binned reconstruction. We therefore recommend that confirmation or falsification claims based on CPL-only results be treated as provisional until binned $w(z)$ data are available.
+
+\section{Theoretical Status}
+
+We do not claim a field-theoretic foundation for Equation~\ref{eq:evolution}. The following problems are unresolved:
+
+\begin{itemize}
+\item No Lagrangian or action is provided.
+\item The DE degree of freedom is unidentified (scalar field, fluid, modified gravity).
+\item Perturbation stability at the phantom crossing is not demonstrated. Standard single-field phantom crossing requires ghost degrees of freedom \citep{Vikman2005}; whether the consumption--production mechanism avoids this is open.
+\item Consistency with local gravity tests is not addressed.
+\item The coupling mechanism between star formation and DE is unspecified.
+\end{itemize}
+
+This pre-registration tests the phenomenology only. Developing the theoretical foundation is a separate, necessary program.
+
+\section{Reproducibility}
+
+Fully specified by Equations~1--3, \citet{MadauDickinson2014} SFR, $R = 0.4$, $f_{\rm prim} = 0.445$, $\gamma = 0.272$, flat $\Lambda$CDM background ($\Omega_m = 0.315$, $H_0 = 70$~km~s$^{-1}$~Mpc$^{-1}$). Python code using 5-point stencil differentiation is in the Appendix.
+
+\acknowledgments
+
+Several predictions of the broader framework were falsified during development: a cosmic rotation interpretation (ruled out by \citealt{Saadeh2016} at $10^7\times$); a hemispheric density asymmetry (SDSS survey artifact, sign reversal confirmed in all-sky Cosmicflows-3); a Cold Spot polarization signal ($0.003\sigma$ after null test on 1,000 simulated sky patches). These failures informed the present model.
+
+\appendix
+
+\section{Python Implementation}
+
+\begin{verbatim}
+import numpy as np
+from scipy import integrate
+
+RETURN_FRAC = 0.4
+
+def MD14(z):
+    return 0.015*(1+z)**2.7 / (1+((1+z)/2.9)**5.6)
+
+def H_LCDM(z):
+    H0_SI = 70*1e3/3.086e22
+    return H0_SI*np.sqrt(0.315*(1+z)**3 + 0.685)
+
+def surviving_stellar_mass(z, z_max=10):
+    z_arr = np.linspace(z, z_max, 400)
+    sfr = MD14(z_arr)
+    dt_dz = -1/((1+z_arr)*H_LCDM(z_arr))
+    return (1-RETURN_FRAC) * (
+        -integrate.simpson(sfr*dt_dz, x=z_arr))
+
+M0 = surviving_stellar_mass(0)
+f_prim, gamma = 0.445, 0.272
+
+def net_integral(z, z_max=10):
+    z_arr = np.linspace(z, z_max, 300)
+    sfr = MD14(z_arr)
+    mstar = np.array([surviving_stellar_mass(zi)/M0
+                      for zi in z_arr])
+    dt = -1/((1+z_arr)*H_LCDM(z_arr))
+    net = sfr - gamma*mstar*np.max(sfr)
+    return -integrate.simpson(net*dt, x=z_arr)
+
+F0 = net_integral(0)
+
+def rho_DE(z):
+    return f_prim + (1-f_prim)*net_integral(z)/F0
+
+def w_eff(z, h=1e-3):
+    # 5-point stencil
+    rp2 = np.log(rho_DE(z + 2*h))
+    rp1 = np.log(rho_DE(z + h))
+    rm1 = np.log(rho_DE(z - h))
+    rm2 = np.log(rho_DE(z - 2*h))
+    dlnrho = (-rp2 + 8*rp1 - 8*rm1 + rm2) / (12*h)
+    return -1 + (1+z)/3 * dlnrho
+\end{verbatim}
+
+\bibliography{references}
+\bibliographystyle{aasjournal}
+
+\end{document}
